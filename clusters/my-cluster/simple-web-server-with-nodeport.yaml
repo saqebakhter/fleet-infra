@@ -1,7 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: web
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webserver
+  namespace: web
 spec:
   replicas: 2
   selector:
@@ -21,7 +27,8 @@ kind: Service
 metadata:
   labels:
     app: webserver
-  name: webserver
+    name: webserver
+    namespace: web
 spec:
   ports:
   - port: 80
