@@ -27,8 +27,8 @@ kind: Service
 metadata:
   labels:
     app: webserver
-    name: webserver
-    namespace: web
+  name: webserver
+  namespace: web
 spec:
   ports:
   - port: 80
