@@ -19,8 +19,8 @@ spec:
         app: webserver
     spec:
       containers:
-      - image: nginx
-        name: nginx
+      - image: registry.velodemo.ninja/library/web-server:1
+        name: webserver
 ---
 apiVersion: v1
 kind: Service
