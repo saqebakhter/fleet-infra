@@ -19,7 +19,7 @@ spec:
         app: webserver
     spec:
       containers:
-      - image: registry.velodemo.ninja/library/web-server:1
+      - image: registry.velodemo.ninja/library/web-server:2
         name: webserver
 ---
 apiVersion: v1
