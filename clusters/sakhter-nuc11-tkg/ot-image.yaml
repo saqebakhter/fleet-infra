@@ -21,6 +21,7 @@ spec:
       containers:
       - image: registry.velodemo.ninja/library/hmi:1
         name: ot-image
+        imagePullPolicy: Always
         volumeMounts:
           - name: host-mount
             mountPath: /usbdrive
