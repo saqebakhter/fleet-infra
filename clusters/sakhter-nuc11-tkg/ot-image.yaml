@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ot-image
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ot-image
+  template:
+    metadata:
+      labels:
+        app: ot-image
+    spec:
+      containers:
+      - image: registry.velodemo.ninja/library/hmi:1
+        name: ot-image
+        volumeMounts:
+          - name: host-mount
+            mountPath: /usbdrive
+      volumes:
+        - name: host-mount
+          hostPath:
+            path: /mnt/usbdrive        
